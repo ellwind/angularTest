@@ -16,18 +16,18 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.getValue()
-      .subscribe(value => {
+      .subscribe((value: number) => {
         this.currentValue = value;
       });
 
     this.dataService.setValue(200);
   }
 
-  setValue() {
-    let iterations = 55;
-    const diff = (this.newValue - this.currentValue);
-    const part = diff / iterations;
-    const current = this.currentValue;
+  setValue(): void {
+    let iterations: number = 55;
+    const diff: number = (this.newValue - this.currentValue);
+    const part: number = diff / iterations;
+    const current: number = this.currentValue;
 
     const interval = setInterval(() => {
       iterations--;
